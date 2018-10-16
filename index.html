@@ -105,6 +105,56 @@
   
     <article class="post">
       <div class="post-meta">
+        <span class="post-time">2018-10-16</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2018/10/16/常用工具命令/">
+            
+              常用工具命令
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+            <p>工作</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <h4 id="1-检测CSRF漏洞：—NMAP"><a href="#1-检测CSRF漏洞：—NMAP" class="headerlink" title="1.检测CSRF漏洞：—NMAP"></a>1.检测CSRF漏洞：—<strong>NMAP</strong></h4><pre><code>nmap -p80 --script http-csrf.nse &quot;url(二级)【例如：www.baidu.com】&quot;
+</code></pre><h4 id="2-cookie未设置httponly标识—httpRequester"><a href="#2-cookie未设置httponly标识—httpRequester" class="headerlink" title="2.cookie未设置httponly标识—httpRequester"></a>2.cookie未设置httponly标识—<strong>httpRequester</strong></h4><pre><code>cookie 设置 httpOnly属性防止js读取cookie.
+</code></pre><h4 id="3-慢HTTP-dos攻击—httpslowtest【看绿色线掉下来之后不上升或间隔大为有此漏洞】"><a href="#3-慢HTTP-dos攻击—httpslowtest【看绿色线掉下来之后不上升或间隔大为有此漏洞】" class="headerlink" title="3.慢HTTP dos攻击—httpslowtest【看绿色线掉下来之后不上升或间隔大为有此漏洞】"></a>3.慢HTTP dos攻击—<strong>httpslowtest</strong>【看绿色线掉下来之后不上升或间隔大为有此漏洞】</h4><ul>
+<li>安装httpslowtest<pre><code>kali#apt-get install slowhttptest
+</code></pre></li>
+<li>使用httpslowtest~查询结果要在goole里翻墙看<br>graph版<pre><code>slowhttptest -c 1000 -B -g -o my_body_stats -i 110 -r 200 -s 8192 -t FAKEVERB -u http://www.daliandpf.org.cn -x 10 -p 3  
+</code></pre>常用       <pre><code>slowhttptest -c 1000 -H -g -o my_header_stats -i 10 -r 200 -t GET -u http://www.daliandpf.org.cn -x 24 -p 3 
+</code></pre></li>
+</ul>
+<h4 id="4-端口信息—NAMP"><a href="#4-端口信息—NAMP" class="headerlink" title="4.端口信息—NAMP"></a>4.端口信息—<strong>NAMP</strong></h4><pre><code>常用命令：
+* nmap -A ip -v                //详细查看该IP全部端口信息，扫描过程显示
+* nmap -p 80 www.baidu.com –script=sql.injection.nse    //扫描sql注射
+* nmap -p 80 198.169.1.2          //扫描指定端口                   
+</code></pre><h4 id="5-X-Frame-Options头缺失—burp"><a href="#5-X-Frame-Options头缺失—burp" class="headerlink" title="5. X-Frame-Options头缺失—burp"></a>5. X-Frame-Options头缺失—<strong>burp</strong></h4><p>X-Frame-Options 有三个值:</p>
+<pre><code>* DENY
+  表示该页面不允许在 frame 中展示，即便是在相同域名的页面中嵌套也不允许。
+* SAMEORIGIN
+  表示该页面可以在相同域名页面的 frame 中展示。
+* ALLOW-FROM uri
+  表示该页面可以在指定来源的 frame 中展示。  
+</code></pre><h4 id="6-检测心脏出血openssl"><a href="#6-检测心脏出血openssl" class="headerlink" title="6. 检测心脏出血openssl"></a>6. 检测心脏出血openssl</h4><pre><code>nmap -sV -p 443 –script=ssl-heartbleed 192.168.197.128
+</code></pre>
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
         <span class="post-time">2018-10-15</span>
       </div>
       <div class="post-title">
