@@ -1,0 +1,178 @@
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>cat</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/lib/jquery.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <script src="/js/common.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
+      
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">cat</a>
+    </div>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/qiaonaiyi/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
+  </div>
+</header>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
+    
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/qiaonaiyi/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
+
+    <main class="main">
+      <div class="content">
+        
+  <article class="post">
+    <div class="post-title">
+      <h2 class="title">CTF加密</h2>
+       
+        <p>CTF</p>
+      
+        <p>加解密</p>
+      
+    </div>
+     <div class="post-meta">
+      <span class="post-time">2018-10-18</span>
+    </div>
+    <div class="post-content">
+      <h4 id="1-莫尔斯电码-摩斯密码"><a href="#1-莫尔斯电码-摩斯密码" class="headerlink" title="1.莫尔斯电码(摩斯密码)"></a><strong>1.莫尔斯电码(摩斯密码)</strong></h4><p>密文形式：-… -.- -.-. - ..-. – .. … -.-.</p>
+<pre><code>http://ctf.ssleye.com/morse.html
+</code></pre><h4 id="2-栅栏密码"><a href="#2-栅栏密码" class="headerlink" title="2.栅栏密码"></a><strong>2.栅栏密码</strong></h4><p>密文形式:KYsd3js2E{a2jda}</p>
+<pre><code>http://ctf.ssleye.com/railfence.html
+</code></pre><h4 id="3-Ook加密"><a href="#3-Ook加密" class="headerlink" title="3.Ook加密"></a><strong>3.Ook加密</strong></h4><p>密文形式1:Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook.<br>密文形式2：….. ….. ….. ….. !?!!. ?…. ….. ….. ….. .?.?! .?… .!…….. ….. !.?.. ….. !?!!. ?!!!! !!?.? !.?!! !!!.. ….. ….. .!.?…… …!? !!.?. ….. ..?.? !.?.. ….. .!.?. ….. ….. !?!!. ?!!!!!!!!! !?.?! .?!.? ….. ….! ?!!.? ….. …?. ?!.?. ….. !.?.. …..!?!!. ?!!!! !!?.? !.?!! !!!!! !!!!. ….. …!. ?…. …!? !!.?. …..?.?!. ?..!. ?…. ….. !?!!. ?!!!! !!!!? .?!.? !!!!! !!!!! !!!.? …….!?! !.?.. ….? .?!.? ….! .!!!. !!!!! !!!!! !!!!! !!.?. ….. .!?!!.?… …?. ?!.?. ….. !.!!! !!!!! !.?.. ….. ..!?! !.?.. ….. .?.?!.?… ….. !.?.</p>
+<pre><code>https://www.splitbrain.org/services/ook
+</code></pre><h4 id="4-brainfuck加密"><a href="#4-brainfuck加密" class="headerlink" title="4.brainfuck加密"></a><strong>4.brainfuck加密</strong></h4><p>密文形式：+++++ +++++ [-&gt;++ +++++ +++&lt;] &gt;++.+ +++++ .&lt;+++ [-&gt;– -&lt;]&gt;- -.+++ +++.&lt;<br>++++[ -&gt;+++ +&lt;]&gt;+ +++.&lt; +++[- &gt;—&lt; ]&gt;— .—- .&lt;+++ ++++[ -&gt;— —-&lt;]&gt;— —– —– .&lt;+++ ++++[ -&gt;+++ ++++&lt; ]&gt;+++ ++.&lt;+ +++++ +[-&gt;- ——&lt;]&gt;. &lt;++++ ++++[ -&gt;+++ +++++ &lt;]&gt;++ .&lt;+++ [-&gt;– -&lt;]&gt;- —-. &lt;++++ +++[-&gt;—- —&lt;] &gt;—- —-. +++++ +..++ +++.+ .&lt;+++ [-&gt;– -&lt;]&gt;- –.&lt;+ ++++++[-&gt;+ +++++ +&lt;]&gt;+ ++.++ +.+++ +++++ +.— -.+++ ++.&lt;+ ++[-&gt; +++&lt;] &gt;++++++.&lt;</p>
+<pre><code>https://www.splitbrain.org/services/ook
+</code></pre><h4 id="5-凯撒密码"><a href="#5-凯撒密码" class="headerlink" title="5.凯撒密码"></a><strong>5.凯撒密码</strong></h4><p>密文形式：MSW{byly_Cm_sIol_lYqUlx_yhdIs_Cn_Wuymul_il_wuff_bcg_pCwnIl_cm_u_Yrwyffyhn_guh_cz_sio_quhn_ni_ayn_bcm_chzilguncihm_sio_wuh_dich_om}</p>
+<pre><code>http://www.nicetool.net/app/caesar_decrypt.html
+</code></pre><h4 id="6-base64编码"><a href="#6-base64编码" class="headerlink" title="6.base64编码"></a><strong>6.base64编码</strong></h4><p>编码形式：ZmxhZ3tidWdrdX0=</p>
+<pre><code>火狐插件hackbar
+</code></pre><h4 id="7-brainfuck编码"><a href="#7-brainfuck编码" class="headerlink" title="7.brainfuck编码"></a><strong>7.brainfuck编码</strong></h4><p>编码形式：++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.&gt;.+++.——.——–.&gt;+.&gt;.</p>
+<pre><code>https://www.splitbrain.org/services/ook
+</code></pre><h4 id="8-杰斐逊轮加密"><a href="#8-杰斐逊轮加密" class="headerlink" title="8.杰斐逊轮加密"></a><strong>8.杰斐逊轮加密</strong></h4><p>密文形式：<br>1： &lt;ZWAXJGDLUBVIQHKYPNTCRMOSFE &lt;<br>2： &lt;KPBELNACZDTRXMJQOYHGVSFUWI &lt;<br>3： &lt;BDMAIZVRNSJUWFHTEQGYXPLOCK &lt;<br>4： &lt;RPLNDVHGFCUKTEBSXQYIZMJWAO &lt;<br>5： &lt;IHFRLABEUOTSGJVDKCPMNZQWXY &lt;<br>6： &lt;AMKGHIWPNYCJBFZDRUSLOQXVET &lt;<br>7： &lt;GWTHSPYBXIZULVKMRAFDCEONJQ &lt;<br>8： &lt;NOZUTWDCVRJLXKISEFAPMYGHBQ &lt;<br>9： &lt;QWATDSRFHENYVUBMCOIKZGJXPL &lt;<br>10：&lt;WABMCXPLTDSRJQZGOIKFHENYVU &lt;<br>11：&lt;XPLTDAOIKFZGHENYSRUBMCQWVJ &lt;<br>12：&lt;TDSWAYXPLVUBOIKZGJRFHENMCQ &lt;<br>13：&lt;BMCSRFHLTDENQWAOXPYVUIKZGJ &lt;<br>14：&lt;XPHKZGJTDSENYVUBMLAOIRFCQW &lt;<br>密钥： 2,5,1,3,6,4,9,7,8,14,10,13,11,12<br>密文：HCBTSXWCRQGLES<br>解密方法：密钥代表解密后的行号顺序，密文为对应顺序的第一个字母<br> <img src="1.png" alt="tupian1 "> </p>
+<p> <img src="2.png" alt="tupian2 "><br>解密结果：<br>HGVSFUWIKPBELNACZDTRXMJQOY<br>CPMNZQWXYIHFRLABEUOTSGJVDK<br>BVIQHKYPNTCRMOSFEZWAXJGDLU<br>TEQGYXPLOCKBDMAIZVRNSJUWFH<br>SLOQXVETAMKGHIWPNYCJBFZDRU<br>XQYIZMJWAORPLNDVHGFCUKTEBS<br>WATDSRFHENYVUBMCOIKZGJXPLQ<br>CEONJQGWTHSPYBXIZULVKMRAFD<br>RJLXKISEFAPMYGHBQNOZUTWDCV<br>QWXPHKZGJTDSENYVUBMLAOIRFC<br>GOIKFHENYVUWABMCXPLTDSRJQZ<br>LTDENQWAOXPYVUIKZGJBMCSRFH<br>ENYSRUBMCQWVJXPLTDAOIKFZGH<br>SWAYXPLVUBOIKZGJRFHENMCQTD<br>某一列为flag<br>例如：xsxsbugkuadmin</p>
+<h4 id="9-base91编码"><a href="#9-base91编码" class="headerlink" title="9.base91编码"></a><strong>9.base91编码</strong></h4><p>编码形式：@iH&lt;,{bdR2H;i6*Tm,Wx2izpx2!</p>
+<pre><code>http://ctf.ssleye.com/base91.html
+</code></pre><h4 id="10-十六进制转ACSII码"><a href="#10-十六进制转ACSII码" class="headerlink" title="10.十六进制转ACSII码"></a><strong>10.十六进制转ACSII码</strong></h4><p>16进制形式：636A56355279427363446C4A49454A7154534230526D684356445A31614342354E326C4B4946467A5769426961453067</p>
+<pre><code>http://www.ab126.com/goju/1711.html
+</code></pre><h4 id="11-十六进制转字符串"><a href="#11-十六进制转字符串" class="headerlink" title="11.十六进制转字符串"></a><strong>11.十六进制转字符串</strong></h4><p>16进制形式：666c61677b616537333538376261353662616566357d</p>
+<pre><code>http://ctf.ssleye.com/hex.html
+</code></pre><h4 id="12-核心价值观编码"><a href="#12-核心价值观编码" class="headerlink" title="12.核心价值观编码"></a><strong>12.核心价值观编码</strong></h4><p>编码形式：公正公正公正诚信文明公正民主公正法治法治友善平等和谐敬业和谐富强和谐富强和谐文明和谐平等公正公正和谐法治公正公正公正文明和谐民主和谐敬业和谐平等和谐敬业和谐敬业和谐和谐和谐公正法治友善法治</p>
+<pre><code>http://ctf.ssleye.com/cvencode.html
+</code></pre><h4 id="13-标准银河字母"><a href="#13-标准银河字母" class="headerlink" title="13.标准银河字母"></a><strong>13.标准银河字母</strong></h4><p>形式：<br><img src="3.png" alt="tupian3 "><br>对照表:<br><img src="4.png" alt="tupian4 "> </p>
+
+    </div>
+  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+        <a href="/2018/10/16/常用工具命令/" rel="next" title="常用工具命令">
+          <i class="fa fa-chevron-left"></i> 常用工具命令
+        </a>
+      
+    </div>
+
+    <span class="post-nav-divider"></span>
+
+    <div class="post-nav-prev post-nav-item">
+    
+    </div>
+  </div>
+
+
+
+      </div>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2017 - 2018</span>
+      
+      <span class="author"><i class="fa fa-user"></i>zn</span>
+    </div>
+    
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
+    
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
+  </div>
+</div>
+
+    </main>
+  </body>
+</html>
