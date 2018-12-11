@@ -105,6 +105,207 @@
   
     <article class="post">
       <div class="post-meta">
+        <span class="post-time">2018-12-11</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2018/12/11/sql语句/">
+            
+              sql语句
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <h3 id="一-增"><a href="#一-增" class="headerlink" title="一.增"></a>一.增</h3><h3 id="二-删除"><a href="#二-删除" class="headerlink" title="二.删除"></a>二.删除</h3><h3 id="三-改"><a href="#三-改" class="headerlink" title="三.改"></a>三.改</h3><h3 id="四-查"><a href="#四-查" class="headerlink" title="四.查"></a>四.查</h3><h4 id="1-条件查询"><a href="#1-条件查询" class="headerlink" title="1.条件查询"></a>1.条件查询</h4><pre><code>SELECT 列名称 FROM 表名称 WHERE 列 运算符 值
+@example:
+SELECT name,population,area  FROM World WHERE area &gt; 3000000 OR Population &gt; 25000000 
+</code></pre>
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2018-11-27</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2018/11/27/python-list-基本操作/">
+            
+              python list 基本操作
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+            <p>python list</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <h3 id="一-获取list属性"><a href="#一-获取list属性" class="headerlink" title="一. 获取list属性"></a>一. 获取list属性</h3><h4 id="1-获取list长度"><a href="#1-获取list长度" class="headerlink" title="1.获取list长度"></a><strong>1.获取list长度</strong></h4><pre><code>list=[1,2,3]
+len(list)  
+# 3
+</code></pre><h4 id="2-遍历list"><a href="#2-遍历list" class="headerlink" title="2.遍历list"></a><strong>2.遍历list</strong></h4><h5 id="1-for…in-遍历list中所有元素-i是list元素value"><a href="#1-for…in-遍历list中所有元素-i是list元素value" class="headerlink" title="1. for…in 遍历list中所有元素(i是list元素value)"></a>1. for…in 遍历list中所有元素(i是list元素value)</h5><pre><code>list=[1,2,3]
+for i in list:
+    print(i)
+&apos;&apos;&apos;
+1
+2
+3
+&apos;&apos;&apos;
+</code></pre><h5 id="2-in-range-i是索引index"><a href="#2-in-range-i是索引index" class="headerlink" title="2.in range()(i是索引index)"></a>2.in range()(i是索引index)</h5><pre><code>list=[1,2,3]
+for i in range(len(list)):
+    print(i,list[i])
+for x in range(1,len(list)):
+    print(x,list[x])
+&apos;&apos;&apos;
+0 1
+1 2
+2 3
+第二个输出
+1 2
+2 3
+&apos;&apos;&apos;
+</code></pre><h5 id="3-for…in-emenumerate"><a href="#3-for…in-emenumerate" class="headerlink" title="3. for…in emenumerate()"></a>3. for…in emenumerate()</h5><pre><code>list=[3,6,8]
+for index,value in enumerate(list):
+    print(index,value)
+</code></pre><h4 id="3-list顺序去重逆序"><a href="#3-list顺序去重逆序" class="headerlink" title="3. list顺序去重逆序"></a><strong>3. list顺序去重逆序</strong></h4><h5 id="1-list-sort-正序排序-会改变原来的list"><a href="#1-list-sort-正序排序-会改变原来的list" class="headerlink" title="1.list sort()正序排序(会改变原来的list)"></a>1.list sort()正序排序(会改变原来的list)</h5><pre><code>list=[3,6,1,2,9,2]
+list.sort()
+print(list)
+# [1, 2, 2, 3, 6, 9]
+</code></pre><h5 id="2-list-reverse-逆序-会改变原来的list"><a href="#2-list-reverse-逆序-会改变原来的list" class="headerlink" title="2.list reverse()逆序(会改变原来的list)"></a>2.list reverse()逆序(会改变原来的list)</h5><pre><code>l = [1,2,5,4]
+l.reverse()
+print(l)
+# [4, 5, 2, 1]
+</code></pre><h5 id="3-list-1-操作实现逆序"><a href="#3-list-1-操作实现逆序" class="headerlink" title="3.list[::-1]操作实现逆序"></a>3.list[::-1]操作实现逆序</h5><pre><code>l = [1,2,3,3,4]
+print(l[::-1])
+# [4, 3, 3, 2, 1]
+</code></pre><h5 id="4-list-set-去重是无序的-不改变原list"><a href="#4-list-set-去重是无序的-不改变原list" class="headerlink" title="4.list set()去重是无序的(不改变原list)"></a>4.list set()去重是无序的(不改变原list)</h5><pre><code>l=[2,5,7,7,3,2]
+a = list(set(l))
+print(set(l))
+print(a)
+&apos;&apos;&apos;
+{2, 3, 5, 7}
+[2, 3, 5, 7]
+&apos;&apos;&apos;
+</code></pre><h5 id="5-list-set-按原list顺序去重"><a href="#5-list-set-按原list顺序去重" class="headerlink" title="5. list set()按原list顺序去重"></a>5. list set()按原list顺序去重</h5><pre><code>l=[2,5,7,7,3,2]
+print(set(l))
+a = list(set(l))
+a.sort(key=l.index)
+print(a)
+&apos;&apos;&apos;
+{2, 3, 5, 7}
+[2, 5, 7, 3]
+&apos;&apos;&apos;
+</code></pre><h5 id="6-新建list，判断是否在新list中，若没有则插入-（原list不变-新list不改变原来的顺序）"><a href="#6-新建list，判断是否在新list中，若没有则插入-（原list不变-新list不改变原来的顺序）" class="headerlink" title="6. 新建list，判断是否在新list中，若没有则插入 （原list不变,新list不改变原来的顺序）"></a>6. 新建list，判断是否在新list中，若没有则插入 （原list不变,新list不改变原来的顺序）</h5><pre><code>l = [1,2,3,3,4,2,3,4,5,6,1]
+news_l = []
+for id in l:
+    if id not in news_l:
+        news_l.append(id)
+print (news_l)
+# [1, 2, 3, 4, 5, 6]
+</code></pre><h5 id="7-求list的所有子集"><a href="#7-求list的所有子集" class="headerlink" title="7. 求list的所有子集"></a>7. 求list的所有子集</h5><pre><code>nums=[1,2,3]
+output = [[]]
+for i in range(len(nums)):
+    for j in range(len(output)):
+        output.append(output[j]+[nums[i]])            
+print(output)
+&apos;&apos;&apos;
+[[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
+&apos;&apos;&apos;
+</code></pre><h3 id="二-删除list中元素"><a href="#二-删除list中元素" class="headerlink" title="二. 删除list中元素"></a>二. 删除list中元素</h3><h4 id="1-删除list中重复元素"><a href="#1-删除list中重复元素" class="headerlink" title="1.删除list中重复元素"></a><strong>1.删除list中重复元素</strong></h4><h5 id="1-set"><a href="#1-set" class="headerlink" title="1.  set()"></a>1.  set()</h5><pre><code>list=[1,2,3,3,2,1]
+print(set(list) )
+# {1, 2, 3}
+</code></pre><h5 id="2-fromkeys-keys"><a href="#2-fromkeys-keys" class="headerlink" title="2.  {}.fromkeys().keys()"></a>2.  {}.fromkeys().keys()</h5><pre><code>list=[1,2,3,3,2,1]
+newlist={}.fromkeys(list).keys()
+print(newlist)
+# dict_keys([1, 2, 3])
+</code></pre><h5 id="3-set-sort"><a href="#3-set-sort" class="headerlink" title="3.  set()+sort()"></a>3.  set()+sort()</h5><pre><code>l=[1,2,3,3,2,1]
+newlist=list(set(l))
+newlist.sort(key=l.index)
+print(newlist)
+# [1, 2, 3]
+</code></pre><h5 id="4-迭代"><a href="#4-迭代" class="headerlink" title="4.  迭代"></a>4.  迭代</h5><pre><code>l=[1,2,3,3,2,1]
+newlist=[]
+for i in l:
+    if not i in newlist:
+        newlist.append(i)
+print(newlist)
+# [1, 2, 3]
+</code></pre><h5 id="5-sort-排序后删除重复的（原list改变）"><a href="#5-sort-排序后删除重复的（原list改变）" class="headerlink" title="5.  sort()排序后删除重复的（原list改变）"></a>5.  sort()排序后删除重复的（原list改变）</h5><pre><code>l=[1,2,3,3,2,1]
+l.sort()
+last=l[-1]
+for i in range(len(l)-2,-1,-1):
+    if l[i]==last:
+        l.remove(l[i])
+    else:
+        last=l[i]
+print(l)
+# [1, 2, 3]
+</code></pre><h3 id="三-修改list中元素"><a href="#三-修改list中元素" class="headerlink" title="三.修改list中元素"></a>三.修改list中元素</h3><h5 id="1-批量修改list中元素"><a href="#1-批量修改list中元素" class="headerlink" title="1.批量修改list中元素"></a>1.批量修改list中元素</h5><pre><code>l = [1,2,3,3,4]
+dict={1:-1,2:-2,3:-3}
+rep=[dict[x] if x in dict else x for x in l]
+print(rep)
+# [-1, -2, -3, -3, 4]
+</code></pre><h3 id="四-新增list和元素"><a href="#四-新增list和元素" class="headerlink" title="四.新增list和元素"></a>四.新增list和元素</h3><h5 id="1-list-append-（新建了一个list追加）"><a href="#1-list-append-（新建了一个list追加）" class="headerlink" title="1. list append()（新建了一个list追加）"></a>1. list append()（新建了一个list追加）</h5><pre><code>#筛选出l中的偶数
+l = [1,2,3,3,4,2,3,4,5,6,1]
+a=[]
+for value in  l:
+    if value%2==0:
+        a.append(value)
+    else:
+        continue
+print(a)
+#[2, 4, 2, 4, 6]
+</code></pre><h5 id="2-list-insert-index-value"><a href="#2-list-insert-index-value" class="headerlink" title="2.list insert(index,value)"></a>2.list insert(index,value)</h5><pre><code>#筛选出l中的偶数
+l = [1,2,3,3,4,2,3,4,5,6,1]
+a=[]
+for value in  l:
+    if value%2==0:
+        a.insert(0,value)
+    else:
+        continue
+print(a)
+#[6, 4, 2, 4, 2]
+</code></pre><h3 id="五-其他操作"><a href="#五-其他操作" class="headerlink" title="五.其他操作"></a>五.其他操作</h3><h5 id="1-转置矩阵"><a href="#1-转置矩阵" class="headerlink" title="1.转置矩阵"></a>1.转置矩阵</h5><pre><code>@plan A：
+A=[[1,2,3],[4,5,6]]
+new =[[0]*len(A) for j in range(len(A[0]))]
+for i,v1 in enumerate(A):
+    for j,v2 in enumerate(A[i]):
+        new[j][i]=v2  
+print(new)
+&apos;&apos;&apos;
+[[1, 4], [2, 5], [3, 6]]
+&apos;&apos;&apos;
+@plan B
+A=[[1,2,3],[4,5,6]]
+new=list(zip(*A))
+print(new)
+&apos;&apos;&apos;
+[(1, 4), (2, 5), (3, 6)]
+&apos;&apos;&apos;
+</code></pre>
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
         <span class="post-time">2018-10-18</span>
       </div>
       <div class="post-title">
