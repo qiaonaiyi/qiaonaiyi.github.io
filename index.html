@@ -105,6 +105,166 @@
   
     <article class="post">
       <div class="post-meta">
+        <span class="post-time">2018-12-13</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2018/12/13/python-string-基本操作/">
+            
+              python string 基本操作
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <h3 id="一-基本操作"><a href="#一-基本操作" class="headerlink" title="一.基本操作"></a>一.基本操作</h3><h5 id="1-获取字符串长度"><a href="#1-获取字符串长度" class="headerlink" title="1.获取字符串长度"></a>1.获取字符串长度</h5><pre><code>u = &quot;www.google.com&quot; 
+print(len(u))
+&apos;&apos;&apos;
+14
+&apos;&apos;&apos;
+</code></pre><h5 id="2-反转字符串"><a href="#2-反转字符串" class="headerlink" title="2.反转字符串"></a>2.反转字符串</h5><h6 id="1-字符串操作"><a href="#1-字符串操作" class="headerlink" title="[1]字符串操作"></a>[1]字符串操作</h6><pre><code>str1=&apos;gooGle&apos;
+print(str1[::-1])
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h6 id="2-string–-gt-list–-gt-string-string-join-结合-list-reverse"><a href="#2-string–-gt-list–-gt-string-string-join-结合-list-reverse" class="headerlink" title="[2]string–&gt;list–&gt;string [string join() 结合 list reverse()]"></a>[2]string–&gt;list–&gt;string [string join() 结合 list reverse()]</h6><pre><code>str1=&apos;gooGle&apos;
+list1=list(str1)
+list1.reverse()
+newstring= &quot;&quot;.join(list1)
+print(newstring)
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h6 id="3-str-gt-list-gt-str-string-join-结合-list-s-1-取反"><a href="#3-str-gt-list-gt-str-string-join-结合-list-s-1-取反" class="headerlink" title="[3]str-&gt;list-&gt;str [string join() 结合 list s[::-1]取反"></a>[3]str-&gt;list-&gt;str [string join() 结合 list s[::-1]取反</h6><pre><code>str1=&apos;gooGle&apos;
+list1=list(str1)
+newstring= &quot;&quot;.join(list1[::-1])
+print(newstring)
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h6 id="4-reduce"><a href="#4-reduce" class="headerlink" title="[4]reduce()"></a>[4]reduce()</h6><pre><code>from functools import reduce
+str1=&apos;gooGle&apos;
+result = reduce(lambda x,y:y+x,str1)
+print(result)
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h6 id="5-栈"><a href="#5-栈" class="headerlink" title="[5]栈"></a>[5]栈</h6><pre><code>str1=&apos;gooGle&apos;
+l = list(str1) #模拟入栈
+result = &quot;&quot;
+while len(l)&gt;0:
+    result += l.pop() #模拟出栈
+print(result)
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h5 id="3-切片split-返回定义的变量"><a href="#3-切片split-返回定义的变量" class="headerlink" title="3.切片split()返回定义的变量"></a>3.切片split()返回定义的变量</h5><pre><code>u = &quot;www.google.com&quot; 
+u1,u2,u3 = u.split(&apos;.&apos;) 
+print(u1)
+print(u2)
+print(u3)
+&apos;&apos;&apos;
+www
+google
+com
+&apos;&apos;&apos;
+</code></pre><h5 id="4-切片split-返回list-不改变原string"><a href="#4-切片split-返回list-不改变原string" class="headerlink" title="4.切片split()返回list[不改变原string]"></a>4.切片split()返回list[不改变原string]</h5><pre><code>u=&apos;www.google.com&apos;
+l=u.split(&apos;.&apos;)
+print(u)
+print(l)
+&apos;&apos;&apos;
+www.google.com
+[&apos;www&apos;, &apos;google&apos;, &apos;com&apos;]
+&apos;&apos;&apos;
+</code></pre><h5 id="5-Python-ASCII码与字符相互转换"><a href="#5-Python-ASCII码与字符相互转换" class="headerlink" title="5.Python ASCII码与字符相互转换"></a>5.Python ASCII码与字符相互转换</h5><pre><code>#字符转ascii
+u=&apos;A&apos;
+print(ord(u))
+#ascii转字符
+asc=65
+print(chr(asc))
+&apos;&apos;&apos;
+65
+A
+&apos;&apos;&apos;
+</code></pre><h5 id="6-字符串大小写转换"><a href="#6-字符串大小写转换" class="headerlink" title="6.字符串大小写转换"></a>6.字符串大小写转换</h5><pre><code>str1=&apos;CXy&apos;
+print(str1.lower())
+str1=&apos;gooGle&apos;
+print(str1.upper())
+&apos;&apos;&apos;
+cxy
+GOOGLE
+&apos;&apos;&apos;
+</code></pre><h5 id="7-判断字符串元素是否是数字，字母，数字或字母组合"><a href="#7-判断字符串元素是否是数字，字母，数字或字母组合" class="headerlink" title="7.判断字符串元素是否是数字，字母，数字或字母组合"></a>7.判断字符串元素是否是数字，字母，数字或字母组合</h5><pre><code>str_1 = &quot;123&quot;
+str_2 = &quot;Abc&quot;
+str_3 = &quot;123Abc&quot;
+print(str_1.isdigit()) #全为数字
+print(str_2.isalpha()) #全为字母
+print(str_3.isalnum()) #为字母或数字
+&apos;&apos;&apos;
+True
+True
+True
+&apos;&apos;&apos;
+</code></pre><h3 id="二-新建string"><a href="#二-新建string" class="headerlink" title="二.新建string"></a>二.新建string</h3><h3 id="三-删除string"><a href="#三-删除string" class="headerlink" title="三.删除string"></a>三.删除string</h3><h5 id="1-string-去掉标点符号及空格"><a href="#1-string-去掉标点符号及空格" class="headerlink" title="1.string 去掉标点符号及空格"></a>1.string 去掉标点符号及空格</h5><pre><code>string = &quot;Special $#! characters   spaces 888323&quot;
+a= &apos;&apos;.join(e for e in string if e.isalnum())
+print(a)
+&apos;&apos;&apos;
+Specialcharactersspaces888323
+&apos;&apos;&apos;
+</code></pre><h3 id="四-修改string"><a href="#四-修改string" class="headerlink" title="四.修改string"></a>四.修改string</h3><h5 id="1-string-repalce-old-new-max-lod替换为new-替换max个-不改变原string"><a href="#1-string-repalce-old-new-max-lod替换为new-替换max个-不改变原string" class="headerlink" title="1.string repalce(old,new,max)lod替换为new,替换max个,不改变原string"></a>1.string repalce(old,new,max)lod替换为new,替换max个,不改变原string</h5><pre><code>u=&apos;google.gg&apos;
+result=u.replace(&apos;g&apos;,&apos;zn&apos;,3)
+print(u)
+print(result)
+&apos;&apos;&apos;
+google.gg
+znooznle.zng
+&apos;&apos;&apos;
+</code></pre><h3 id="五-在string中查找"><a href="#五-在string中查找" class="headerlink" title="五.在string中查找"></a>五.在string中查找</h3><h5 id="1-string-find-index-返回第一个匹配项的索引-若不存在匹配项，find-返回-1，index-会抛出异常"><a href="#1-string-find-index-返回第一个匹配项的索引-若不存在匹配项，find-返回-1，index-会抛出异常" class="headerlink" title="1.string find(),index()返回第一个匹配项的索引 [若不存在匹配项，find()返回-1，index()会抛出异常]"></a>1.string find(),index()返回第一个匹配项的索引 [若不存在匹配项，find()返回-1，index()会抛出异常]</h5><pre><code>u = &quot;google&quot;
+print(u.find(&apos;g&apos;))
+print(u.index(&apos;g&apos;))
+print(u.find(&apos;z&apos;))  #-1
+# print(u.index(&apos;z&apos;)) #报错
+#从字符串的末尾开始查找
+print(u.rfind(&apos;g&apos;))
+print(u.rindex(&apos;g&apos;))
+print(u.rfind(&apos;z&apos;))
+# print(u.rindex(&apos;z&apos;))#报错
+&apos;&apos;&apos;
+0
+0
+-1
+3
+3
+-1
+&apos;&apos;&apos;
+</code></pre><h5 id="2-string-find-返回所有匹配项的索引组成的list"><a href="#2-string-find-返回所有匹配项的索引组成的list" class="headerlink" title="2.string find()返回所有匹配项的索引组成的list"></a>2.string find()返回所有匹配项的索引组成的list</h5><pre><code>u = &quot;www.google.com&quot;
+findelement=&apos;.&apos;
+a=[]
+result=u.find(findelement,0)
+print(result)
+while result !=-1:
+    a.append(result)
+    result=u.find(findelement,result+1)
+print(a)
+&apos;&apos;&apos;
+3
+[3, 10]
+&apos;&apos;&apos;
+</code></pre><h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5>
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
         <span class="post-time">2018-12-11</span>
       </div>
       <div class="post-title">
@@ -125,10 +285,10 @@
         
 
         
-        <h3 id="一-增"><a href="#一-增" class="headerlink" title="一.增"></a>一.增</h3><h3 id="二-删除"><a href="#二-删除" class="headerlink" title="二.删除"></a>二.删除</h3><h3 id="三-改"><a href="#三-改" class="headerlink" title="三.改"></a>三.改</h3><h3 id="四-查"><a href="#四-查" class="headerlink" title="四.查"></a>四.查</h3><h4 id="1-条件查询"><a href="#1-条件查询" class="headerlink" title="1.条件查询"></a>1.条件查询</h4><pre><code>SELECT 列名称 FROM 表名称 WHERE 列 运算符 值
+        <h3 id="一-增"><a href="#一-增" class="headerlink" title="一.增"></a>一.增</h3><h3 id="二-删除"><a href="#二-删除" class="headerlink" title="二.删除"></a>二.删除</h3><h3 id="三-改"><a href="#三-改" class="headerlink" title="三.改"></a>三.改</h3><h3 id="四-查"><a href="#四-查" class="headerlink" title="四.查"></a>四.查</h3><h4 id="1-条件查询-字符串加’’-数字不加"><a href="#1-条件查询-字符串加’’-数字不加" class="headerlink" title="1.条件查询(字符串加’’,数字不加)"></a>1.条件查询(字符串加’’,数字不加)</h4><pre><code>SELECT 列名称 FROM 表名称 WHERE 列 运算符 值
 @example:
-SELECT name,population,area  FROM World WHERE area &gt; 3000000 OR Population &gt; 25000000 
-</code></pre>
+SELECT name,population,area  FROM World WHERE area &gt; 3000000 OR Population &gt; 25000000
+</code></pre><h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4>
         
       </div>
     </article>
@@ -257,6 +417,14 @@ for i in range(len(l)-2,-1,-1):
         last=l[i]
 print(l)
 # [1, 2, 3]
+</code></pre><h5 id="6-sorted-排序，返回无重复数的新list-不改变原list"><a href="#6-sorted-排序，返回无重复数的新list-不改变原list" class="headerlink" title="6. sorted()排序，返回无重复数的新list,不改变原list"></a>6. sorted()排序，返回无重复数的新list,不改变原list</h5><pre><code>l=[&apos;c&apos;,&apos;a&apos;,&apos;b&apos;]
+t=(&apos;b&apos;,&apos;c&apos;,&apos;a&apos;)
+print(sorted(l))
+print(sorted(t))
+&apos;&apos;&apos;
+[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+&apos;&apos;&apos;
 </code></pre><h3 id="三-修改list中元素"><a href="#三-修改list中元素" class="headerlink" title="三.修改list中元素"></a>三.修改list中元素</h3><h5 id="1-批量修改list中元素"><a href="#1-批量修改list中元素" class="headerlink" title="1.批量修改list中元素"></a>1.批量修改list中元素</h5><pre><code>l = [1,2,3,3,4]
 dict={1:-1,2:-2,3:-3}
 rep=[dict[x] if x in dict else x for x in l]
@@ -282,7 +450,45 @@ for value in  l:
         continue
 print(a)
 #[6, 4, 2, 4, 2]
-</code></pre><h3 id="五-其他操作"><a href="#五-其他操作" class="headerlink" title="五.其他操作"></a>五.其他操作</h3><h5 id="1-转置矩阵"><a href="#1-转置矩阵" class="headerlink" title="1.转置矩阵"></a>1.转置矩阵</h5><pre><code>@plan A：
+</code></pre><h5 id="3-list-extend-在一个list后面追加另一个list-在已存在的列表中添加新的列表内容"><a href="#3-list-extend-在一个list后面追加另一个list-在已存在的列表中添加新的列表内容" class="headerlink" title="3.list extend()在一个list后面追加另一个list(在已存在的列表中添加新的列表内容)"></a>3.list extend()在一个list后面追加另一个list(在已存在的列表中添加新的列表内容)</h5><pre><code>aList = [123, &apos;xyz&apos;, &apos;zara&apos;, &apos;abc&apos;]
+bList = [2009, &apos;manni&apos;]
+aList.extend(bList)
+print(aList)
+&apos;&apos;&apos;
+[123, &apos;xyz&apos;, &apos;zara&apos;, &apos;abc&apos;, 2009, &apos;manni&apos;]
+&apos;&apos;&apos;
+</code></pre><h3 id="五-查找"><a href="#五-查找" class="headerlink" title="五.查找"></a>五.查找</h3><h5 id="1-查某一元素出现次数-count"><a href="#1-查某一元素出现次数-count" class="headerlink" title="1.查某一元素出现次数 count()"></a>1.查某一元素出现次数 count()</h5><pre><code>l=[111,&apos;abc&apos;,&apos;cba&apos;,111,&apos;abc&apos;,111]
+print(l.count(111))
+&apos;&apos;&apos;
+3
+&apos;&apos;&apos;
+</code></pre><h5 id="2-查找某一元素，返回第一个符合元素所在位置-index"><a href="#2-查找某一元素，返回第一个符合元素所在位置-index" class="headerlink" title="2.查找某一元素，返回第一个符合元素所在位置 index()"></a>2.查找某一元素，返回第一个符合元素所在位置 index()</h5><pre><code>l=[111,&apos;abc&apos;,&apos;cba&apos;,111,&apos;abc&apos;,111]
+print(l.index(111))
+print(l.index(&apos;abc&apos;))
+&apos;&apos;&apos;
+0
+1
+&apos;&apos;&apos;
+</code></pre><h3 id="六-list-与其他类型转化"><a href="#六-list-与其他类型转化" class="headerlink" title="六.list 与其他类型转化"></a>六.list 与其他类型转化</h3><h5 id="1-两个list组成一个dict"><a href="#1-两个list组成一个dict" class="headerlink" title="1.两个list组成一个dict"></a>1.两个list组成一个dict</h5><pre><code>a = [&apos;a1&apos;,&apos;a2&apos;,&apos;a3&apos;,&apos;a4&apos;]
+b = [&apos;b1&apos;,&apos;b2&apos;,&apos;b3&apos;]
+d = zip(a,b)
+print(dict(d)) 
+&apos;&apos;&apos;
+{&apos;a1&apos;: &apos;b1&apos;, &apos;a2&apos;: &apos;b2&apos;, &apos;a3&apos;: &apos;b3&apos;}
+&apos;&apos;&apos;&apos;
+</code></pre><h5 id="2-dict-key-value-分别转为一个list"><a href="#2-dict-key-value-分别转为一个list" class="headerlink" title="2.dict key,value 分别转为一个list"></a>2.dict key,value 分别转为一个list</h5><pre><code>dit = {&apos;name&apos;:&apos;zxf&apos;,
+    &apos;age&apos;:&apos;22&apos;,
+    &apos;gender&apos;:&apos;male&apos;,
+    &apos;address&apos;:&apos;dalian&apos;}
+lst1 = list(dit)
+lst2 = list(dit.values())
+print(lst1)
+print(lst2)
+&apos;&apos;&apos;
+[&apos;name&apos;, &apos;age&apos;, &apos;gender&apos;, &apos;address&apos;]
+[&apos;zxf&apos;, &apos;22&apos;, &apos;male&apos;, &apos;dalian&apos;]
+&apos;&apos;&apos;
+</code></pre><h3 id="七-其他操作"><a href="#七-其他操作" class="headerlink" title="七.其他操作"></a>七.其他操作</h3><h5 id="1-转置矩阵"><a href="#1-转置矩阵" class="headerlink" title="1.转置矩阵"></a>1.转置矩阵</h5><pre><code>@plan A：
 A=[[1,2,3],[4,5,6]]
 new =[[0]*len(A) for j in range(len(A[0]))]
 for i,v1 in enumerate(A):
@@ -292,12 +498,19 @@ print(new)
 &apos;&apos;&apos;
 [[1, 4], [2, 5], [3, 6]]
 &apos;&apos;&apos;
-@plan B
-A=[[1,2,3],[4,5,6]]
+</code></pre><h5 id="2-zip-实现转置数组"><a href="#2-zip-实现转置数组" class="headerlink" title="2.zip()实现转置数组"></a>2.zip()实现转置数组</h5><pre><code>A=[[1,2,3],[4,5,6]]
 new=list(zip(*A))
 print(new)
 &apos;&apos;&apos;
 [(1, 4), (2, 5), (3, 6)]
+&apos;&apos;&apos;
+</code></pre><h5 id="3-zip-接受2个及以上参数"><a href="#3-zip-接受2个及以上参数" class="headerlink" title="3.zip()接受2个及以上参数"></a>3.zip()接受2个及以上参数</h5><pre><code>a = [1,2,3]
+b = [4,5,6]
+c = [7,8,9]
+res=list(zip(a,b,c))
+print(res)
+&apos;&apos;&apos;
+[(1, 4, 7), (2, 5, 8), (3, 6, 9)]
 &apos;&apos;&apos;
 </code></pre>
         
@@ -642,38 +855,11 @@ curl -X POST &apos;http://219.153.49.228:44267/vultest/_temp_view?limit=11&apos;
       </div>
     </article>
   
-    <article class="post">
-      <div class="post-meta">
-        <span class="post-time">2018-09-18</span>
-      </div>
-      <div class="post-title">
-        
-          <a class="post-title-link" href="/2018/09/18/DVWA安装/">
-            
-              DVWA安装
-            
-          </a>
-          
-        
-        <div class="post-tags">
-          
-            <p>DVWA</p>
-          
-            <p>test</p>
-          
-        </div>
-      </div>
-      <div class="post-content">
-
-        
-
-        
-        <h1 id="1-下载-XAMPP"><a href="#1-下载-XAMPP" class="headerlink" title="1.下载 XAMPP"></a>1.下载 XAMPP</h1><h2 id="地址：https-www-apachefriends-org-zh-cn-download-html"><a href="#地址：https-www-apachefriends-org-zh-cn-download-html" class="headerlink" title="地址：https://www.apachefriends.org/zh_cn/download.html"></a>地址：<a href="https://www.apachefriends.org/zh_cn/download.html" target="_blank" rel="noopener">https://www.apachefriends.org/zh_cn/download.html</a></h2>
-        
-      </div>
-    </article>
-  
 </section>
+
+  <nav class="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+  </nav>
 
 
 
@@ -684,7 +870,7 @@ curl -X POST &apos;http://219.153.49.228:44267/vultest/_temp_view?limit=11&apos;
       
       <span>&copy;</span>
       
-      <span>2017 - 2018</span>
+      <span>2018</span>
       
       <span class="author"><i class="fa fa-user"></i>zn</span>
     </div>

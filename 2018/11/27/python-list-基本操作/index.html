@@ -202,6 +202,14 @@ for i in range(len(l)-2,-1,-1):
         last=l[i]
 print(l)
 # [1, 2, 3]
+</code></pre><h5 id="6-sorted-排序，返回无重复数的新list-不改变原list"><a href="#6-sorted-排序，返回无重复数的新list-不改变原list" class="headerlink" title="6. sorted()排序，返回无重复数的新list,不改变原list"></a>6. sorted()排序，返回无重复数的新list,不改变原list</h5><pre><code>l=[&apos;c&apos;,&apos;a&apos;,&apos;b&apos;]
+t=(&apos;b&apos;,&apos;c&apos;,&apos;a&apos;)
+print(sorted(l))
+print(sorted(t))
+&apos;&apos;&apos;
+[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+&apos;&apos;&apos;
 </code></pre><h3 id="三-修改list中元素"><a href="#三-修改list中元素" class="headerlink" title="三.修改list中元素"></a>三.修改list中元素</h3><h5 id="1-批量修改list中元素"><a href="#1-批量修改list中元素" class="headerlink" title="1.批量修改list中元素"></a>1.批量修改list中元素</h5><pre><code>l = [1,2,3,3,4]
 dict={1:-1,2:-2,3:-3}
 rep=[dict[x] if x in dict else x for x in l]
@@ -227,7 +235,45 @@ for value in  l:
         continue
 print(a)
 #[6, 4, 2, 4, 2]
-</code></pre><h3 id="五-其他操作"><a href="#五-其他操作" class="headerlink" title="五.其他操作"></a>五.其他操作</h3><h5 id="1-转置矩阵"><a href="#1-转置矩阵" class="headerlink" title="1.转置矩阵"></a>1.转置矩阵</h5><pre><code>@plan A：
+</code></pre><h5 id="3-list-extend-在一个list后面追加另一个list-在已存在的列表中添加新的列表内容"><a href="#3-list-extend-在一个list后面追加另一个list-在已存在的列表中添加新的列表内容" class="headerlink" title="3.list extend()在一个list后面追加另一个list(在已存在的列表中添加新的列表内容)"></a>3.list extend()在一个list后面追加另一个list(在已存在的列表中添加新的列表内容)</h5><pre><code>aList = [123, &apos;xyz&apos;, &apos;zara&apos;, &apos;abc&apos;]
+bList = [2009, &apos;manni&apos;]
+aList.extend(bList)
+print(aList)
+&apos;&apos;&apos;
+[123, &apos;xyz&apos;, &apos;zara&apos;, &apos;abc&apos;, 2009, &apos;manni&apos;]
+&apos;&apos;&apos;
+</code></pre><h3 id="五-查找"><a href="#五-查找" class="headerlink" title="五.查找"></a>五.查找</h3><h5 id="1-查某一元素出现次数-count"><a href="#1-查某一元素出现次数-count" class="headerlink" title="1.查某一元素出现次数 count()"></a>1.查某一元素出现次数 count()</h5><pre><code>l=[111,&apos;abc&apos;,&apos;cba&apos;,111,&apos;abc&apos;,111]
+print(l.count(111))
+&apos;&apos;&apos;
+3
+&apos;&apos;&apos;
+</code></pre><h5 id="2-查找某一元素，返回第一个符合元素所在位置-index"><a href="#2-查找某一元素，返回第一个符合元素所在位置-index" class="headerlink" title="2.查找某一元素，返回第一个符合元素所在位置 index()"></a>2.查找某一元素，返回第一个符合元素所在位置 index()</h5><pre><code>l=[111,&apos;abc&apos;,&apos;cba&apos;,111,&apos;abc&apos;,111]
+print(l.index(111))
+print(l.index(&apos;abc&apos;))
+&apos;&apos;&apos;
+0
+1
+&apos;&apos;&apos;
+</code></pre><h3 id="六-list-与其他类型转化"><a href="#六-list-与其他类型转化" class="headerlink" title="六.list 与其他类型转化"></a>六.list 与其他类型转化</h3><h5 id="1-两个list组成一个dict"><a href="#1-两个list组成一个dict" class="headerlink" title="1.两个list组成一个dict"></a>1.两个list组成一个dict</h5><pre><code>a = [&apos;a1&apos;,&apos;a2&apos;,&apos;a3&apos;,&apos;a4&apos;]
+b = [&apos;b1&apos;,&apos;b2&apos;,&apos;b3&apos;]
+d = zip(a,b)
+print(dict(d)) 
+&apos;&apos;&apos;
+{&apos;a1&apos;: &apos;b1&apos;, &apos;a2&apos;: &apos;b2&apos;, &apos;a3&apos;: &apos;b3&apos;}
+&apos;&apos;&apos;&apos;
+</code></pre><h5 id="2-dict-key-value-分别转为一个list"><a href="#2-dict-key-value-分别转为一个list" class="headerlink" title="2.dict key,value 分别转为一个list"></a>2.dict key,value 分别转为一个list</h5><pre><code>dit = {&apos;name&apos;:&apos;zxf&apos;,
+    &apos;age&apos;:&apos;22&apos;,
+    &apos;gender&apos;:&apos;male&apos;,
+    &apos;address&apos;:&apos;dalian&apos;}
+lst1 = list(dit)
+lst2 = list(dit.values())
+print(lst1)
+print(lst2)
+&apos;&apos;&apos;
+[&apos;name&apos;, &apos;age&apos;, &apos;gender&apos;, &apos;address&apos;]
+[&apos;zxf&apos;, &apos;22&apos;, &apos;male&apos;, &apos;dalian&apos;]
+&apos;&apos;&apos;
+</code></pre><h3 id="七-其他操作"><a href="#七-其他操作" class="headerlink" title="七.其他操作"></a>七.其他操作</h3><h5 id="1-转置矩阵"><a href="#1-转置矩阵" class="headerlink" title="1.转置矩阵"></a>1.转置矩阵</h5><pre><code>@plan A：
 A=[[1,2,3],[4,5,6]]
 new =[[0]*len(A) for j in range(len(A[0]))]
 for i,v1 in enumerate(A):
@@ -237,12 +283,19 @@ print(new)
 &apos;&apos;&apos;
 [[1, 4], [2, 5], [3, 6]]
 &apos;&apos;&apos;
-@plan B
-A=[[1,2,3],[4,5,6]]
+</code></pre><h5 id="2-zip-实现转置数组"><a href="#2-zip-实现转置数组" class="headerlink" title="2.zip()实现转置数组"></a>2.zip()实现转置数组</h5><pre><code>A=[[1,2,3],[4,5,6]]
 new=list(zip(*A))
 print(new)
 &apos;&apos;&apos;
 [(1, 4), (2, 5), (3, 6)]
+&apos;&apos;&apos;
+</code></pre><h5 id="3-zip-接受2个及以上参数"><a href="#3-zip-接受2个及以上参数" class="headerlink" title="3.zip()接受2个及以上参数"></a>3.zip()接受2个及以上参数</h5><pre><code>a = [1,2,3]
+b = [4,5,6]
+c = [7,8,9]
+res=list(zip(a,b,c))
+print(res)
+&apos;&apos;&apos;
+[(1, 4, 7), (2, 5, 8), (3, 6, 9)]
 &apos;&apos;&apos;
 </code></pre>
     </div>
@@ -276,7 +329,7 @@ print(new)
       
       <span>&copy;</span>
       
-      <span>2017 - 2018</span>
+      <span>2018</span>
       
       <span class="author"><i class="fa fa-user"></i>zn</span>
     </div>

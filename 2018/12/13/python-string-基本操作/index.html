@@ -1,0 +1,282 @@
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>cat</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/lib/jquery.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <script src="/js/common.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
+      
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">cat</a>
+    </div>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/qiaonaiyi/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
+  </div>
+</header>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
+    
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/qiaonaiyi/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
+
+    <main class="main">
+      <div class="content">
+        
+  <article class="post">
+    <div class="post-title">
+      <h2 class="title">python string 基本操作</h2>
+       
+    </div>
+     <div class="post-meta">
+      <span class="post-time">2018-12-13</span>
+    </div>
+    <div class="post-content">
+      <h3 id="一-基本操作"><a href="#一-基本操作" class="headerlink" title="一.基本操作"></a>一.基本操作</h3><h5 id="1-获取字符串长度"><a href="#1-获取字符串长度" class="headerlink" title="1.获取字符串长度"></a>1.获取字符串长度</h5><pre><code>u = &quot;www.google.com&quot; 
+print(len(u))
+&apos;&apos;&apos;
+14
+&apos;&apos;&apos;
+</code></pre><h5 id="2-反转字符串"><a href="#2-反转字符串" class="headerlink" title="2.反转字符串"></a>2.反转字符串</h5><h6 id="1-字符串操作"><a href="#1-字符串操作" class="headerlink" title="[1]字符串操作"></a>[1]字符串操作</h6><pre><code>str1=&apos;gooGle&apos;
+print(str1[::-1])
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h6 id="2-string–-gt-list–-gt-string-string-join-结合-list-reverse"><a href="#2-string–-gt-list–-gt-string-string-join-结合-list-reverse" class="headerlink" title="[2]string–&gt;list–&gt;string [string join() 结合 list reverse()]"></a>[2]string–&gt;list–&gt;string [string join() 结合 list reverse()]</h6><pre><code>str1=&apos;gooGle&apos;
+list1=list(str1)
+list1.reverse()
+newstring= &quot;&quot;.join(list1)
+print(newstring)
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h6 id="3-str-gt-list-gt-str-string-join-结合-list-s-1-取反"><a href="#3-str-gt-list-gt-str-string-join-结合-list-s-1-取反" class="headerlink" title="[3]str-&gt;list-&gt;str [string join() 结合 list s[::-1]取反"></a>[3]str-&gt;list-&gt;str [string join() 结合 list s[::-1]取反</h6><pre><code>str1=&apos;gooGle&apos;
+list1=list(str1)
+newstring= &quot;&quot;.join(list1[::-1])
+print(newstring)
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h6 id="4-reduce"><a href="#4-reduce" class="headerlink" title="[4]reduce()"></a>[4]reduce()</h6><pre><code>from functools import reduce
+str1=&apos;gooGle&apos;
+result = reduce(lambda x,y:y+x,str1)
+print(result)
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h6 id="5-栈"><a href="#5-栈" class="headerlink" title="[5]栈"></a>[5]栈</h6><pre><code>str1=&apos;gooGle&apos;
+l = list(str1) #模拟入栈
+result = &quot;&quot;
+while len(l)&gt;0:
+    result += l.pop() #模拟出栈
+print(result)
+&apos;&apos;&apos;
+elGoog
+&apos;&apos;&apos;
+</code></pre><h5 id="3-切片split-返回定义的变量"><a href="#3-切片split-返回定义的变量" class="headerlink" title="3.切片split()返回定义的变量"></a>3.切片split()返回定义的变量</h5><pre><code>u = &quot;www.google.com&quot; 
+u1,u2,u3 = u.split(&apos;.&apos;) 
+print(u1)
+print(u2)
+print(u3)
+&apos;&apos;&apos;
+www
+google
+com
+&apos;&apos;&apos;
+</code></pre><h5 id="4-切片split-返回list-不改变原string"><a href="#4-切片split-返回list-不改变原string" class="headerlink" title="4.切片split()返回list[不改变原string]"></a>4.切片split()返回list[不改变原string]</h5><pre><code>u=&apos;www.google.com&apos;
+l=u.split(&apos;.&apos;)
+print(u)
+print(l)
+&apos;&apos;&apos;
+www.google.com
+[&apos;www&apos;, &apos;google&apos;, &apos;com&apos;]
+&apos;&apos;&apos;
+</code></pre><h5 id="5-Python-ASCII码与字符相互转换"><a href="#5-Python-ASCII码与字符相互转换" class="headerlink" title="5.Python ASCII码与字符相互转换"></a>5.Python ASCII码与字符相互转换</h5><pre><code>#字符转ascii
+u=&apos;A&apos;
+print(ord(u))
+#ascii转字符
+asc=65
+print(chr(asc))
+&apos;&apos;&apos;
+65
+A
+&apos;&apos;&apos;
+</code></pre><h5 id="6-字符串大小写转换"><a href="#6-字符串大小写转换" class="headerlink" title="6.字符串大小写转换"></a>6.字符串大小写转换</h5><pre><code>str1=&apos;CXy&apos;
+print(str1.lower())
+str1=&apos;gooGle&apos;
+print(str1.upper())
+&apos;&apos;&apos;
+cxy
+GOOGLE
+&apos;&apos;&apos;
+</code></pre><h5 id="7-判断字符串元素是否是数字，字母，数字或字母组合"><a href="#7-判断字符串元素是否是数字，字母，数字或字母组合" class="headerlink" title="7.判断字符串元素是否是数字，字母，数字或字母组合"></a>7.判断字符串元素是否是数字，字母，数字或字母组合</h5><pre><code>str_1 = &quot;123&quot;
+str_2 = &quot;Abc&quot;
+str_3 = &quot;123Abc&quot;
+print(str_1.isdigit()) #全为数字
+print(str_2.isalpha()) #全为字母
+print(str_3.isalnum()) #为字母或数字
+&apos;&apos;&apos;
+True
+True
+True
+&apos;&apos;&apos;
+</code></pre><h3 id="二-新建string"><a href="#二-新建string" class="headerlink" title="二.新建string"></a>二.新建string</h3><h3 id="三-删除string"><a href="#三-删除string" class="headerlink" title="三.删除string"></a>三.删除string</h3><h5 id="1-string-去掉标点符号及空格"><a href="#1-string-去掉标点符号及空格" class="headerlink" title="1.string 去掉标点符号及空格"></a>1.string 去掉标点符号及空格</h5><pre><code>string = &quot;Special $#! characters   spaces 888323&quot;
+a= &apos;&apos;.join(e for e in string if e.isalnum())
+print(a)
+&apos;&apos;&apos;
+Specialcharactersspaces888323
+&apos;&apos;&apos;
+</code></pre><h3 id="四-修改string"><a href="#四-修改string" class="headerlink" title="四.修改string"></a>四.修改string</h3><h5 id="1-string-repalce-old-new-max-lod替换为new-替换max个-不改变原string"><a href="#1-string-repalce-old-new-max-lod替换为new-替换max个-不改变原string" class="headerlink" title="1.string repalce(old,new,max)lod替换为new,替换max个,不改变原string"></a>1.string repalce(old,new,max)lod替换为new,替换max个,不改变原string</h5><pre><code>u=&apos;google.gg&apos;
+result=u.replace(&apos;g&apos;,&apos;zn&apos;,3)
+print(u)
+print(result)
+&apos;&apos;&apos;
+google.gg
+znooznle.zng
+&apos;&apos;&apos;
+</code></pre><h3 id="五-在string中查找"><a href="#五-在string中查找" class="headerlink" title="五.在string中查找"></a>五.在string中查找</h3><h5 id="1-string-find-index-返回第一个匹配项的索引-若不存在匹配项，find-返回-1，index-会抛出异常"><a href="#1-string-find-index-返回第一个匹配项的索引-若不存在匹配项，find-返回-1，index-会抛出异常" class="headerlink" title="1.string find(),index()返回第一个匹配项的索引 [若不存在匹配项，find()返回-1，index()会抛出异常]"></a>1.string find(),index()返回第一个匹配项的索引 [若不存在匹配项，find()返回-1，index()会抛出异常]</h5><pre><code>u = &quot;google&quot;
+print(u.find(&apos;g&apos;))
+print(u.index(&apos;g&apos;))
+print(u.find(&apos;z&apos;))  #-1
+# print(u.index(&apos;z&apos;)) #报错
+#从字符串的末尾开始查找
+print(u.rfind(&apos;g&apos;))
+print(u.rindex(&apos;g&apos;))
+print(u.rfind(&apos;z&apos;))
+# print(u.rindex(&apos;z&apos;))#报错
+&apos;&apos;&apos;
+0
+0
+-1
+3
+3
+-1
+&apos;&apos;&apos;
+</code></pre><h5 id="2-string-find-返回所有匹配项的索引组成的list"><a href="#2-string-find-返回所有匹配项的索引组成的list" class="headerlink" title="2.string find()返回所有匹配项的索引组成的list"></a>2.string find()返回所有匹配项的索引组成的list</h5><pre><code>u = &quot;www.google.com&quot;
+findelement=&apos;.&apos;
+a=[]
+result=u.find(findelement,0)
+print(result)
+while result !=-1:
+    a.append(result)
+    result=u.find(findelement,result+1)
+print(a)
+&apos;&apos;&apos;
+3
+[3, 10]
+&apos;&apos;&apos;
+</code></pre><h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5>
+    </div>
+  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+        <a href="/2018/12/11/sql语句/" rel="next" title="sql语句">
+          <i class="fa fa-chevron-left"></i> sql语句
+        </a>
+      
+    </div>
+
+    <span class="post-nav-divider"></span>
+
+    <div class="post-nav-prev post-nav-item">
+    
+    </div>
+  </div>
+
+
+
+      </div>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2018</span>
+      
+      <span class="author"><i class="fa fa-user"></i>zn</span>
+    </div>
+    
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
+    
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
+  </div>
+</div>
+
+    </main>
+  </body>
+</html>
